@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -75,10 +76,36 @@ namespace PMPU_Testing
             con.Close();
 
             //Close Video Wall
+            System.Diagnostics.Process[] procs = null;
+
+            try
+            {
+                procs = Process.GetProcessesByName("videowall");
+                Process videowallProc = procs[0];
+                if(!videowallProc.HasExited)
+                {
+                    videowallProc.Kill();
+                }
+            }
+
+            finally
+            {
+                if(procs!=null)
+                {
+                    foreach (Process p in procs)
+                    {
+                        p.Dispose();
+                    }
+                }
+            }
 
 
-            //Launch Video Wall
+            //Wait and Launch Video Wall
+            //Sleep for 1 second
+            System.Threading.Thread.Sleep(1000);
 
+            //Start new Video Wall Process
+            Process startVideo = Process.Start(@"C:\Program Files\VI Enterprise\Video Wall\VideoWall.exe");
         }
     }
 }
