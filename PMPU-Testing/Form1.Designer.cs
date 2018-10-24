@@ -32,6 +32,8 @@
             this.btn_changeMonitor = new System.Windows.Forms.Button();
             this.btn_quad = new System.Windows.Forms.Button();
             this.btn_send = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_single
@@ -74,11 +76,23 @@
             this.btn_send.UseVisualStyleBackColor = true;
             this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(302, 70);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_send);
             this.Controls.Add(this.btn_quad);
             this.Controls.Add(this.btn_changeMonitor);
@@ -86,6 +100,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,6 +111,7 @@
         private System.Windows.Forms.Button btn_changeMonitor;
         private System.Windows.Forms.Button btn_quad;
         private System.Windows.Forms.Button btn_send;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
