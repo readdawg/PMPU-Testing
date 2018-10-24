@@ -122,5 +122,10 @@ namespace PMPU_Testing
             //Start new Video Wall Process
             Process startVideo = Process.Start(@"C:\Program Files\VI Enterprise\Video Wall\VideoWall.exe");
         }
+
+        private void btn_LoadQuadLayout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
